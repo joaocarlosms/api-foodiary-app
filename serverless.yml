@@ -1,5 +1,5 @@
-org: devacademy
-service: foodiary-api
+org: jcdevlabs
+service: foodiary-api-v2
 
 plugins:
   - serverless-offline
@@ -92,11 +92,11 @@ resources:
     UploadsBucket:
       Type: AWS::S3::Bucket
       Properties:
-        BucketName: jstacklab-v1-foodiary-uploads
+        BucketName: upload-bucket-foodiary-v2
     MealsQueue:
       Type: AWS::SQS::Queue
       Properties:
-        QueueName: meals-queue
+        QueueName: meals-queue-v2
         VisibilityTimeout: 60
         RedrivePolicy:
           maxReceiveCount: 1
@@ -104,4 +104,4 @@ resources:
     MealsDLQ:
       Type: AWS::SQS::Queue
       Properties:
-        QueueName: meals-queue-dlq
+        QueueName: meals-queue-dlq-v2
